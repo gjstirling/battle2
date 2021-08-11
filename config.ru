@@ -1,2 +1,2 @@
-#require './app'
-# run BattleApp
+require './app'
+run Battle
