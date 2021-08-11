@@ -1,10 +1,14 @@
 feature 'Entering player names' do
   scenario 'display names' do
-    visit('/')
-    fill_in(:player_one, with: 'Graeme')
-    fill_in(:player_two, with: 'Ahsan')
-    click_button('Submit')
+    sign_in_and_play
     save_and_open_page
     expect(page).to have_content 'Graeme Vs Ahsan'
   end
 end
+
+feature 'Display Hit points' do 
+  scenario 'Player 2 HP' do 
+    sign_in_and_play
+    expect(page).to have_content 'Ahsan: 60HP'
+  end 
+end 
