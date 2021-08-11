@@ -1,5 +1,13 @@
 <html>
-  <%= @player_one %> Vs <%= @player_two %>
-  <%= @player_two %>: 60HP
+  <div>
+    <%= @player_one %> Vs <%= @player_two %>
+  </div>
+    <%= @player_two %>: 60HP
+  <div>
+    <form action='/start' method='get'>
+      <button type="submit">Attack</button>
+    </form>
+  </div>
+    <%= @player_one%> has attacked <%= @player_two%>
 </html>
 
