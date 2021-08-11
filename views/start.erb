@@ -5,9 +5,13 @@
     <%= @player_two %>: 60HP
   <div>
     <form action='/start' method='get'>
-      <button type="submit">Attack</button>
+      <button type="button" onclick='alert(<%= @player_one%> has attacked <%= @player_two%>)'>Attack</button>
     </form>
   </div>
-    <%= @player_one%> has attacked <%= @player_two%>
+  <!--<% if onclick %>
+    (<%= @player_one%> has attacked <%= @player_two%>)
+  <% end %>
 </html>
+-->
+  
 
