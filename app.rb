@@ -1,7 +1,14 @@
-require 'sinatra'
+require "bundler/setup"
+require "sinatra"
+require "sinatra/base"
+require "sinatra/reloader" if development?
 
 class Battle < Sinatra::Base
+ 
   enable :sessions
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   get '/' do
     erb :index
@@ -20,5 +27,5 @@ class Battle < Sinatra::Base
   end 
   
 # start the server if ruby file executed directly
-run! if app_file ==$0
+  run! if app_file ==$0
 end
